@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+[
+  { name: "Calgary International Airport", city: "Calgary", code: "YYC" },
+  { name: "Gander International Airport", city: "Gander", code: "YQX" },
+  { name: "Montreal-Trudeau International Airport", city: "Montreal", code: "YUL" },
+  { name: "Halifax International Airport", city: "Halifax", code: "YHZ" },
+  { name: "Toronto Pearson Airport", city: "Toronto", code: "YYZ" }
+].each do |attributes|
+  Airport.find_or_create_by!(attributes)
+end

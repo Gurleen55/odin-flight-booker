@@ -16,3 +16,14 @@
 ].each do |attributes|
   Airport.find_or_create_by!(attributes)
 end
+
+flights_data = [
+  { name: "Air Canada", departure_airport: Airport.find(1), arrival_airport: Airport.find(2), duration: 360, time: Time.now + 1.day },
+  { name: "Flair", departure_airport: Airport.find(1), arrival_airport: Airport.find(3), duration: 300, time: Time.now + 2.days },
+  { name: "Swoop", departure_airport: Airport.find(4), arrival_airport: Airport.find(2), duration: 180, time: Time.now + 3.days },
+  { name: "Air India", departure_airport: Airport.find(3), arrival_airport: Airport.find(5), duration: 240, time: Time.now + 4.days }
+]
+
+flights_data.each do |flight|
+  Flight.create!(flight)
+end

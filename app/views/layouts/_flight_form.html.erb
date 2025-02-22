@@ -1,0 +1,5 @@
+<%= form_with(url: flights_path, data: {turbo_method: :get}) do |form| %>
+    <%= form.label :departure_airport_id, "Select Departure Airport" %>
+    <%= form.select(:departure_airport_id, available_airports) %> 
+    <%= form.submit "Search Flights"%>
+<% end %>

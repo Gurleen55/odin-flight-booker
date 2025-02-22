@@ -1,2 +1,9 @@
 <h3>Search For the flights</h3>
 
+<%= render "layouts/flight_form", locals: {available_airports: @available_airports}%>
+
+<% @flights.each do |flight|%>
+    <ul>
+        <li>flight.name</li>
+    </ul>
+<% end %>

@@ -1,0 +1,4 @@
+<h4> <%= flight.name %> </h4>
+<p> <%= "Duration: #{(flight.duration/60).round(2)}hrs; From #{flight.departure_airport.name}(#{flight.departure_airport.city}) to #{flight.arrival_airport.name}(#{flight.arrival_airport.city}) " %></p>
+<p> <%= "Departure Date And Time: #{flight.time.strftime("%j/%m/%Y %I:%M %p")}"%></p>
+

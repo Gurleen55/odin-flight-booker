@@ -1,6 +1,6 @@
 <h3>Search For the flights</h3>
 
-<%= render partial: "layouts/flight_form", locals: {available_airports: @available_airports}%>
+<%= render partial: "layouts/flight_form", locals: {available_airports: @available_airports, available_times: @available_times}%>
 
 <% @flights.each do |flight|%>
     <ul>

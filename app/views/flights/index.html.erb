@@ -2,12 +2,13 @@
 
 <%= render partial: "layouts/flight_form", locals: {available_airports: @available_airports, available_times: @available_times}%>
 
-<%= form_with do |form| %>
+<%= form_with(url: bookings_path, method: :get) do |form| %>
     <% @flights.each do |flight|%>
       <%= render flight%>
       <%= form.label :flight_id, "Select This Flight"%>
       <%= form.radio_button :flight_id, flight.id %>
     <% end %>
     <br>
+    <%= form.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
     <%= form.submit "Book Flight" %>
 <% end %>

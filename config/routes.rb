@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get "bookings/new"
   get "flights/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get "index", to: "flights#index", as: :flights
+  get "new", to: "bookings#new", as: :bookings
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

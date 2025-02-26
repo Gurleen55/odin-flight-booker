@@ -15,7 +15,8 @@ class Flight < ApplicationRecord
           conditions[:time] = start_time..end_time
         end
       end
-      Flight.where(conditions)
+
+      conditions.to_h.any? ? Flight.where(conditions) : []
   end
 
   def formatted_time

@@ -4,7 +4,7 @@ class FlightsController < ApplicationController
     @available_times = Flight.all.map do |flight|
       [ flight.formatted_time, flight.time  ]
     end
-    @flights = Flight.search(flight_params) || []
+    @flights = Flight.search(flight_params)
   end
 
   private

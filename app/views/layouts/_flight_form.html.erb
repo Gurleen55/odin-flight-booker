@@ -6,6 +6,6 @@
     <%= form.label :time, "Date"%>
     <%= form.select(:time, available_times, include_blank: true) %>
     <%= form.label :number_of_passengers, "Number Of Passengers" %>
-    <%= form.select(:number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]]))%>
+    <%= form.select(:number_of_passengers, options_for_select([[1,1],[2,2],[3,3],[4,4]], 1))%>
     <%= form.submit "Search Flights"%>
 <% end %>

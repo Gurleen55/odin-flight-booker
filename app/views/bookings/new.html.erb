@@ -7,4 +7,15 @@
         <%= "Departure Date And Time: #{@flight.time.strftime("%d/%m/%Y %I:%M %p")}"%></p>
         <%= "Passengers: #{params[:number_of_passengers]}"%>
     </div>
+    <%= form.fields_for :passengers do |passenger_form| %>
+        <li>
+            <%= passenger_form.label :name %>
+            <%= passenger_form.text_field :name %>
+
+            <%= passenger_form.label :email %>
+            <%= passenger_form.email_field :email %>
+        </li>
+    <% end %>
+    <%= form.hidden_field :flight_id, value: params[:flight_id] %>
+    <%= form.submit "Book Flight" %>
 <% end %>
